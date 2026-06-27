@@ -1,15 +1,26 @@
 :root{
-    --black: rgba(0, 5, 10, 1);
-    --black-40: rgba(0, 5, 10, 0.4);
-    --gray: rgba(150, 150, 150, 1);
-    --cyan: rgba(33, 194, 219, 1);
-    --cyan-70: rgba(33, 194, 219, 0.7);
-    --cyan-50: rgba(33, 194, 219, 0.5);
-    --cyan-30: rgba(33, 194, 219, 0.3);
-    --cyan-10: rgba(33, 194, 219, 0.1);
+    --black: rgba(0, 5, 10, 1.00);
+    --black-70: rgba(0, 5, 10, 0.70);
+    --black-50: rgba(0, 5, 10, 0.50);
+    --black-30: rgba(0, 5, 10, 0.30);
+    --black-20: rgba(0, 5, 10, 0.20);
+    --black-10: rgba(0, 5, 10, 0.10);
+    --black-05: rgba(0, 5, 10, 0.05);
+    --white: white;
+    --gray: rgba(150, 150, 150, 1.00);
+    --gray-70: rgba(150, 150, 150, 0.70);
+    --gray-50: rgba(150, 150, 150, 0.50);
+    --cyan: rgba(33, 194, 219, 1.00);
+    --cyan-70: rgba(33, 194, 219, 0.70);
+    --cyan-50: rgba(33, 194, 219, 0.50);
+    --cyan-30: rgba(33, 194, 219, 0.30); /* used */
+    --cyan-10: rgba(33, 194, 219, 0.10);
     --cyan-05: rgba(33, 194, 219, 0.05);
 }
-*, *::after, *::before{ margin: 0; padding: 0; box-sizing: border-box; }
+
+*, *::after, *::before{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
 
 @font-face {
     font-family: 'Minecraft';
@@ -21,63 +32,48 @@
     src: url('./DMSans.ttf') format('truetype');
 }
 
-
 html{
-    background-color: var(--black);
-    /* background-image: linear-gradient(#030c1452,#000000c7),url("./bkg.png"); */
-    /* background-image: radial-gradient(circle at 50% -10%,#22d3ee33,#0000 50%),url("./bkg.png"); */
-    background-image: radial-gradient(circle at 50% -10%, #22d3ee33, #0000 50%),linear-gradient(#030c1452,#000000c7),url("./bkg-fade.png");
-    /* background: radial-gradient(circle at 50% -10%, #22d3ee33, #0000 50%),linear-gradient(#030c1452,#000000c7),linear-gradient(#030c1452,#000000c7), var(--black); */
-    background-position: 50%, 50%, 50% 58%;
+    background: radial-gradient(circle at 50% -10%, var(--cyan-30), var(--black-30) 50%), linear-gradient(var(--black-50), var(--black-30)), var(--black);
+    /* background-image: radial-gradient(circle at 50% -10%, var(--cyan-30), var(--black-30) 50%), linear-gradient(var(--black-30), var(--black-10)), url("./bkg-fade.png");
+    background-position: 50%;
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%, cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 body{
     width: 600px;
     margin: auto;
-    padding-top: 50px;
+    padding: 70px 0;
     text-align: center;
     font-family: DMSans;
     font-size: 15px;
-    color: white;
-}
-
-#header{
-    /* margin-bottom: 30px; */
+    color: var(--white);
 }
 
 h1{
-    /* text-shadow: 2px 2px 0 var(--black); */
-    text-shadow: 2px 2px #000000f2, 0 0 12px var(--cyan-50), 0 0 100px var(--cyan), 0 0 200px var(--cyan), 0 0 300px var(--cyan);
+    text-shadow: 2px 2px var(--black-70), 0 0 10px var(--cyan-50), 0 0 100px var(--cyan), 0 0 200px var(--cyan), 0 0 300px var(--cyan);
     font-size: 40px;
     line-height: 40px;
+    letter-spacing: 3px;
     font-family: Minecraft, monospace;
     font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    user-select: none;
+    margin-bottom: 35px;
     cursor: pointer;
+    user-select: none;
 }
 
 .button{
     display: inline-block;
     padding: 8px 12px;
     background-color: var(--cyan-10);
-    /* border: 1px solid var(--cyan-50); */
     border-bottom: 2px solid var(--cyan-50);
-    color: white;
-    transition: 100ms;
-    /* font-weight: bold; */
     user-select: none;
+    cursor: pointer;
 }
 .button:hover{
-    cursor: pointer;
     background-color: var(--cyan-30);
-    /* border: 1px solid var(--cyan); */
     border-bottom: 2px solid var(--cyan-70);
-    color: white;
 }
 
 #option{
@@ -93,68 +89,64 @@ h1{
 
 .btn{
     display: inline-block;
-    padding: 10px 0;
-    line-height: 15px;
     height: 35px;
     width: 35px;
+    padding: 10px 0;
+    font-size: 15px;
+    line-height: 15px;
+    background-color: var(--black-30);
     border: 1px solid var(--cyan-50);
-    color: white;
-    transition: 100ms;
+    border-right: none;
     margin-left: -1px;
+    padding-right:1px;
     user-select: none;
 }
-.btn:first-child{
-    margin-left: 0;
+
+.btn:last-child{
+    border-right: 1px solid var(--cyan-50);
+    padding-right:0px;
 }
+
 .btn.active, .btn:hover{
     cursor: pointer;
     background-color: var(--cyan-30);
     border: 1px solid var(--cyan);
-    color: white;
-}
-/* .btn-separator{
-    width: 10px;
-} */
-
-
-.guess-group{
-    margin-bottom: 10px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    gap: 10px;
+    padding-right:0px;
 }
 
 .guess{
-    /* border: 1px solid red; */
-    flex-grow: 2;
+    display: block;
+    height: 35px;
+    width: 100%;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .guess input{
     display: block;
-    width: 100%;
-    overflow: hidden;
     height: 35px;
-    padding: 10px;
-    padding-right: 35px;
+    width: 100%;
     font-size: 15px;
     line-height: 15px;
-    background-color: var(--black-40);
+    padding: 10px;
+    padding-right: 35px;
+    overflow: hidden;
+    background-color: var(--black-30);
     border: 1px solid var(--cyan-50);
-    color: white;
+    outline: none;
+    color: var(--white);
 }
 .guess input:focus{
     outline: none;
-    border: 1px solid var(--cyan);
     background-color: var(--cyan-10);
+    border: 1px solid var(--cyan);
 }
 .guess input::placeholder{
     user-select: none;
+    color: var(--gray-70);
 }
 .guess input:focus::placeholder{
     color: var(--gray);
-    user-select: none;
 }
 .guess .command{
     display: block;
@@ -163,7 +155,7 @@ h1{
     padding: 5px;
     font-size: 15px;
     line-height: 15px;
-    background-color: var(--black-40);
+    background-color: var(--black-30);
     color: var(--cyan-50);
     border: 1px solid var(--cyan-50);
     position: absolute;
@@ -171,6 +163,11 @@ h1{
     top: 5px;
     z-index: 99;
     user-select: none;
+}
+
+.guess input:focus + .command {
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
 }
 
 
@@ -183,7 +180,7 @@ h1{
     flex-flow: row nowrap;
     justify-content: space-between;
     /* background-color: var(--black-40); */
-    background: linear-gradient(0.25turn, var(--black-40), var(--cyan-05));
+    background: linear-gradient(0.25turn, var(--black-50), var(--cyan-05));
     background: var(--cyan-05);
     border-top: 1px solid var(--cyan-10);
     height: 45px;
