@@ -17,33 +17,33 @@
 
         <div id="option">
             <div class="btn-group">
-                <span class="btn">AF</span>
-                <span class="btn">AM</span>
-                <span class="btn">AS</span>
-                <span class="btn active">UE</span>
-                <span class="btn">OC</span>
+                <span id="option-region-af" class="btn">AF</span>
+                <span id="option-region-am" class="btn">AM</span>
+                <span id="option-region-as" class="btn">AS</span>
+                <span id="option-region-eu" class="btn active">UE</span>
+                <span id="option-region-oc" class="btn">OC</span>
             </div>
 
             <div class="btn-group">
-                <span class="btn active">5</span>
-                <span class="btn">10</span>
-                <span class="btn">25</span>
-                <span class="btn">50</span>
-                <span class="btn">∀</span>
+                <span id="option-difficulty-5" class="btn active">5</span>
+                <span id="option-difficulty-10" class="btn">10</span>
+                <span id="option-difficulty-25" class="btn">25</span>
+                <span id="option-difficulty-50" class="btn">50</span>
+                <span id="option-difficulty-all" class="btn">∀</span>
             </div>
 
-            <span class="button">Réinitialiser</span>
+            <span id="reset-button" class="button">Réinitialiser</span>
         </div>
 
         <div class="guess-group">
             <div class="guess">
-                <input type="text" placeholder="Proposer un pays...">
+                <input id="input-country" type="text" placeholder="Proposer un pays...">
                 <span class="command">/</span>
             </div>
 
             <div class="guess">
-                <input type="text" placeholder="Proposer une capitale...">
-                <span class="command">!</span>
+                <input id="input-capital" type="text" placeholder="Proposer une capitale...">
+                <span class="command colon-fix">:</span>
             </div>
         </div>
     </div>
@@ -90,6 +90,8 @@
         © 2026 Noé Delorme. Tous droits réservés.
     </div>
     
+    <script src="world.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>

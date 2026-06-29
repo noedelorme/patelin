@@ -42,9 +42,9 @@ html{
 }
 
 body{
-    width: 600px;
+    max-width: 600px;
     margin: auto;
-    padding: 70px 0;
+    padding: 70px 5px;
     text-align: center;
     font-family: DMSans;
     font-size: 15px;
@@ -65,7 +65,9 @@ h1{
 
 .button{
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 15px;
     background-color: var(--cyan-10);
     border-bottom: 2px solid var(--cyan-50);
     user-select: none;
@@ -136,19 +138,23 @@ h1{
     outline: none;
     color: var(--white);
 }
+
 .guess input:focus{
     outline: none;
     background-color: var(--cyan-10);
     border: 1px solid var(--cyan);
 }
+
 .guess input::placeholder{
     user-select: none;
     color: var(--gray-70);
 }
+
 .guess input:focus::placeholder{
     color: var(--gray);
 }
-.guess .command{
+
+.command{
     display: block;
     height: 25px;
     width: 25px;
@@ -163,6 +169,11 @@ h1{
     top: 5px;
     z-index: 99;
     user-select: none;
+    font-weight: bold;
+}
+
+.colon-fix{
+    padding-top: 3px;
 }
 
 .guess input:focus + .command {
@@ -170,34 +181,34 @@ h1{
     border: 1px solid var(--cyan);
 }
 
-
 #list {
     text-align: left;
 }
 
-#list .item{
+.item{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    /* background-color: var(--black-40); */
-    background: linear-gradient(0.25turn, var(--black-50), var(--cyan-05));
     background: var(--cyan-05);
     border-top: 1px solid var(--cyan-10);
     height: 45px;
+    width: 100%;
 }
+
+.item:first-child{
+    border-top: none;
+}
+
 .flag{
-    /* flex-grow: 1; */
     display: block;
     height: 45px;
-    width: 77px;
+    width: auto;
     padding: 7px;
     padding-right: 0;
-    width: auto;
     user-select: none;
 }
 .country, .capital{
-    /* flex-grow: 2; */
-    padding: 15px 20px;
+    padding: 15px;
     font-size: 15px;
     line-height: 15px;
     height: 45px;
@@ -205,13 +216,13 @@ h1{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    /* border: 1px solid red; */
 }
-.capital{
-    border-left: 1px solid var(--cyan-10);
+
+.country{
+    border-right: 1px solid var(--cyan-10);
 }
 
 #footer{
     color: var(--gray);
-    margin: 70px;
+    margin-top: 70px;
 }
